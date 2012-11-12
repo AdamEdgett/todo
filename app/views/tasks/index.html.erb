@@ -1,0 +1,11 @@
+<% @tasks.each do |task| %>
+	<h2><%= link_to task.description, task %></h2>
+	<p><%= task.duedate %></p>
+	<p><%= task.user_id %></p>
+	<p><%= link_to "Edit", edit_task_path(task) %> |
+		<%= link_to "Delete", task,
+		:confirm => "Delete task?", :method => :delete %></p>
+	<hr />
+<% end %>
+
+<p><%= link_to "New", new_task_path %></p>

@@ -1,0 +1,24 @@
+<h1>Edit</h1>
+
+<%= form_for @task do |f| %>
+	<% if @task.errors.any? %>
+		<h2>Errors:</h2>
+		<ul>
+			<% @task.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<p><%= f.label :description %><br/>
+		<%= f.text_field :description %>
+	</p>
+	<p><%= f.label :duedate %><br/>
+		<%= f.datetime_select :duedate %>
+	</p>
+	<p><%= f.label :user_id %><br/>
+		<%= f.text_field :user_id %>
+	</p>
+	<p>
+		<%= f.submit "Submit" %>
+	</p>
+<% end %>
